@@ -56,51 +56,51 @@ include '.includes/header.php';
                                 <div class="seat" id="nomor" value="2">2</div>
                             </div>
                             <div class="column">
-                                <div class="seat occupied" id="nomor">3</div>
-                                <div class="seat" id="nomor">4</div>
+                                <div class="seat occupied" id="nomor" value="3">3</div>
+                                <div class="seat" id="nomor" value="4">4</div>
                             </div>
                         </div>
                         
                         <div class="row1">
                             <div class="column">
-                                    <div class="seat" id="5">5</div>
-                                    <div class="seat" id="6">6</div>
+                                    <div class="seat" id="nomor" value="5">5</div>
+                                    <div class="seat" id="nomor" value="6">6</div>
                                 </div>
                                 <div class="column">
-                                    <div class="seat occupied" id="7">7</div>
-                                    <div class="seat occupied" id="8">8</div>
+                                    <div class="seat occupied" id="nomor" value="7">7</div>
+                                    <div class="seat occupied" id="nomor" value="8">8</div>
                                 </div>
                             </div>
 
                             <div class="row1">
                                 <div class="column">
-                                    <div class="seat" id="9">9</div>
-                                    <div class="seat occupied" id="10">10</div>
+                                    <div class="seat" id="nomor" value="9">9</div>
+                                    <div class="seat occupied" id="nomor" value="10">10</div>
                                 </div>
                                 <div class="column">
-                                    <div class="seat" id="11">11</div>
-                                    <div class="seat" id="12">12</div>
+                                    <div class="seat" id="nomor" value="11">11</div>
+                                    <div class="seat" id="nomor" value="12">12</div>
                                 </div>
                             </div>
                             
                             <div class="row1">
                                 <div class="column">
-                                    <div class="seat" id="13">13</div>
-                                    <div class="seat" id="14">14</div>
+                                    <div class="seat" id="nomor" value="13">13</div>
+                                    <div class="seat" id="nomor" value="14">14</div>
                                 </div>
                                 <div class="column">
-                                    <div class="seat occupied" id="15">15</div>
-                                    <div class="seat" id="16">16</div>
+                                    <div class="seat occupied" id="nomor" value="15">15</div>
+                                    <div class="seat" id="nomor" value="16">16</div>
                                 </div>
                             </div>
                             <div class="row1">
                                 <div class="column">
-                                    <div class="seat" id="17">17</div>
-                                    <div class="seat" id="18">18</div>
+                                    <div class="seat" id="nomor" value="17">17</div>
+                                    <div class="seat" id="nomor" value="18">18</div>
                                 </div>
                                 <div class="column">
-                                    <div class="seat" id="19">19</div>
-                                    <div class="seat occupied" id="20">20</div>
+                                    <div class="seat" id="nomor" value="19">19</div>
+                                    <div class="seat occupied" id="nomor" value="20">20</div>
                                 </div>
                             </div>
                         </div>
@@ -110,12 +110,9 @@ include '.includes/header.php';
                                 const seats = document.querySelectorAll('.row1 .seat:not(.occupied)');
                                 function updateSelectedCount() {
                                     const selectedSeats = document.querySelectorAll('.row .seat.selected');
-                                    //const selectedNomor = document.getElementById("nomor");
                                     const selectedSeatsCount = selectedSeats.length;
-                                    //const selectedNomorKursi = selectedNomor.selected;
     
                                     totalseat.innerText = selectedSeatsCount;
-                                    //nomor.innerText = selectedNomorKursi;
 
                                 }
                                 container.addEventListener('click', e => {
