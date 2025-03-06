@@ -2,31 +2,34 @@
 
 include("config.php");
 session_start();
+$penumpangId = $_SESSION["penumpang_id"];
 if (isset($_POST['simpan'])) {
-    $tanggal_pemesanan = $_POST['tanggal_pemesanan'];
-    $query = "INSERT INTO pemesanan VALUES('$tanggal_pemesanan')";
+    $rute_id = $_POST["rute_id"];
+    $tanggalPesan = $_POST['tanggal_pemesanan'];
+    $query = "INSERT INTO pemesanan (rute_id, penumpang_id, tanggal_pemesanan) VALUES ('$rute_id', '$penumpangId', '$tanggalPesan')";
     $exec = mysqli_query($conn, $query);
 
-    if ($exec) {
+    if ($conn->query($query) === TRUE){
         $_SESSION['notification'] = [
             'type' => 'primary',
-            'message' => 'Pesanan berhasil ditambahkan!'
+            'message' => 'Berhasil menambah pesanan.'
         ];
-    } else {
+    }else{
         $_SESSION['notification'] = [
             'type' => 'danger',
-            'message' => 'Gagal menambahkan pesanan: ' . mysqli_error($conn)
+            'message' => 'Error: ' . $conn -> error
         ];
     }
+}else{
 
-    header('Location: pesanan.php');
+    header('Location: beranda.php');
     exit();
 }
 
 if (isset($_POST['delete'])) {
-    $catID = $_POST['catID'];
+    $pemesananID = $_POST['pemesananID'];
 
-    $exec = mysqli_query($conn, "DELETE FROM pemesanan WHERE pemesanan_id='$catID'");
+    $exec = mysqli_query($conn, "DELETE FROM pemesanan WHERE pemesanan_id='$pemesananID'");
     if ($exec) {
         $_SESSION['notification'] = [
             'type' => 'primary',
@@ -38,14 +41,15 @@ if (isset($_POST['delete'])) {
             'message' => 'Gagal menghapus pesanan: ' . mysqli_error($conn)
         ];
     }
-    header('Location: pesanan.php');
+    header('Location: beranda.php');
     exit();
 }
 
 if (isset($_POST['update'])) {
-    $catID = $_POST['catID'];
-    $tanggal_pemesanan = $_POST['tanggal_pemesanan'];
-    $query = "UPDATE pemesanan SET tanggal_pemesanan = '$nama' WHERE pemesanan_id='$catID'";
+    $pemesanan = $_POST['pemesanan_id'];
+    $rute_id = $_POST["rute_id"];
+    $tanggalPesan = $_POST['tanggal_pemesanan'];
+    $query = "UPDATE pemesanan SET rute_id ='$rute_id', tanggal_pemesanan = '$tanggalPesan' WHERE pemesanan_id='$pemesanan'";
     $exec = mysqli_query($conn, $query);
 
     if ($exec) {
@@ -56,9 +60,9 @@ if (isset($_POST['update'])) {
     } else {
         $_SESSION['notification'] = [
             'type' => 'danger',
-            'message' => 'Pesanan memperbarui kategori: ' . mysqli_error($conn)
+            'message' => 'Pesanan memperbarui pesanan: ' . mysqli_error($conn)
         ];
     }
-    header('Location: pesanan.php');
+    header('Location: beranda.php');
     exit();
 }

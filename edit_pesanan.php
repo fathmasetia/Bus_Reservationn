@@ -1,34 +1,35 @@
 <?php
-//Menyertakan header halaman
+include 'config.php';
 include '.includes/header.php';
+$pemesananIdEdit = $_GET['pemesanan_id']; 
+
+
+$query = "SELECT * FROM pemesanan WHERE pemesanan_id = $pemesananIdEdit";
+$result = $conn->query($query);
+
+if ($result->num_rows > 0){
+    $post = $result->fetch_assoc();
+}else{
+    echo "Pemesanan not found.";
+    exit();
+}
 ?>
-<div class="container-xxl flex grow-1 container-p-y">
-    <!--- Judul halaman -->
+<div class="container-xxl flex-grow-1 container-p-y">
     <div class="row">
-        <!-- Form untuk menambahkan pesanan baru -->
         <div class="col-md-10">
             <div class="card mb-4">
                 <div class="card-body">
                     <form method="POST" action="proses_pesanan.php" enctype="multipart/form-data">
+                        <input type="hidden" name="pemesanan_id" value="<?php echo $pemesananIdEdit; ?>">
                         <div class="mb-3">
-                            <label for="nama" class="form-label">Nama Pemesan</label>
-                            <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama Anda" required>
+                            <div class="mb-3">
+                                <label for="nama" class="form-label">Nama Pemesan</label>
+                                <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama Anda" >
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Alamat Email</label>
                             <input type="email" class="form-control" id="email" placeholder="Masukkan Email Anda (name@example.com)">
-                        </div>
-                        <!--<div class="mb-3">
-                            <label for="nomor_telepon" class="col-md-2 col-form-label">Nomor Telepon</label>
-                                <div class="col-md-10">
-                                    <input class="form-control" type="tel" value="+62" id="html5-tel-input">
-                                </div>
-                        </div>-->
-                        <div class="mb-3">
-                            <label for="tanggal" class="form-label">Tanggal Pemesanan</label>
-                            <div class="col-md-10">
-                            <input class="form-control" type="date" name="tanggal_pemesanan">
-                        </div>
                         </div>
                         <div class="mb-3">
                             <label for="rute_id" class="form-label">Pilih Rute</label>
@@ -124,7 +125,7 @@ include '.includes/header.php';
                                 });
                         </script>
                     </body>
-                        <button type="submit" name="simpan" class="btn btn-primary">Buat Pesanan</button>
+                            <button type="submit" name="update" class="btn btn-primary">Update</button>
                     </form>
                 </div>
             </div>
@@ -132,6 +133,5 @@ include '.includes/header.php';
     </div>
 </div>
 <?php
-// Meneyratkan footer halaman
-include '.includes/footer.php';
+include '.includes/footer.php'
 ?>

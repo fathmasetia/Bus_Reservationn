@@ -1,9 +1,8 @@
 <?php
 session_start();
 
+$penumpangId = $_SESSION ["penumpang_id"];
 $nama = $_SESSION ["nama"];
-//$penumpang_id = $_SESSION["penumpang_id"];
-//$kontak = $_SESSION ["kontak"];
 
 $notification = $_SESSION['notification'] ?? null;
 if ($notification){

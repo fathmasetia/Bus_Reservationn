@@ -14,8 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (password_verify($password, $row["password"])) {
             $_SESSION["nama"] = $row["nama"];
-            //$_SESSION["penumpang_id"] = $row ["penumpang_id"];
-            //$_SESSION["kontak"] = $row ["contact"];
+            $_SESSION["penumpang_id"] = $row ["penumpang_id"];
+            $_SESSION["kontak"] = $row ["contact"];
 
             $_SESSION['notification'] = [
                 'type' => 'primary',
