@@ -32,6 +32,11 @@ if ($result->num_rows > 0){
                             <input type="email" class="form-control" id="email" placeholder="Masukkan Email Anda (name@example.com)">
                         </div>
                         <div class="mb-3">
+                            <label for="tanggal" class="form-label">Tanggal Pemesanan</label>
+                            <div class="col-md-10">
+                            <input class="form-control" type="date" name="tanggal_pemesanan">
+                        </div>
+                        <div class="mb-3">
                             <label for="rute_id" class="form-label">Pilih Rute</label>
                             <select class="form-select" name="rute_id" required>
                                 <option value="" selected disabled>Pilih salah satu</option>

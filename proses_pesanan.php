@@ -17,11 +17,9 @@ if (isset($_POST['simpan'])) {
     }else{
         $_SESSION['notification'] = [
             'type' => 'danger',
-            'message' => 'Error: ' . $conn -> error
+            'message' => 'Error: ' . mysqli_error($conn)
         ];
     }
-}else{
-
     header('Location: beranda.php');
     exit();
 }
@@ -45,24 +43,25 @@ if (isset($_POST['delete'])) {
     exit();
 }
 
-if (isset($_POST['update'])) {
-    $pemesanan = $_POST['pemesanan_id'];
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])){
+    $pemesananId = $_POST['pemesanan_id'];
+    $penumpangId = $_POST['penumpang_id'];
     $rute_id = $_POST["rute_id"];
     $tanggalPesan = $_POST['tanggal_pemesanan'];
-    $query = "UPDATE pemesanan SET rute_id ='$rute_id', tanggal_pemesanan = '$tanggalPesan' WHERE pemesanan_id='$pemesanan'";
+    $query = "UPDATE pemesanan SET penumpang_id ='$penumpangId', rute_id ='$rute_id', tanggal_pemesanan = '$tanggalPesan' WHERE pemesanan_id = $pemesananId";
     $exec = mysqli_query($conn, $query);
 
-    if ($exec) {
+    if ($conn->query($query)===TRUE){
         $_SESSION['notification'] = [
             'type' => 'primary',
-            'message' => 'Pesanan berhasil diperbarui!'
+            'message' => 'Pesanan berhasil diperbarui.'
         ];
-    } else {
+    }else{
         $_SESSION['notification'] = [
             'type' => 'danger',
-            'message' => 'Pesanan memperbarui pesanan: ' . mysqli_error($conn)
+            'message' => 'Gagal memperbarui pesanan.'
         ];
     }
     header('Location: beranda.php');
     exit();
-}
+    }

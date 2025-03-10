@@ -1,3 +1,17 @@
+<?php
+session_start();
+$notification = $_SESSION['notification'] ?? null;
+if($notification){
+  unset ($_SESSION['notification']);
+}
+if(isset($_SESSION["nama"])){
+  $_SESSION['notification']=[
+    'type' => 'danger',
+    'message' => 'Silahkan Logout Terlebih Dahulu'
+  ];
+  header('location: ../dashboard.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
