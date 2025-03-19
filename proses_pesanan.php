@@ -19,7 +19,7 @@ if (isset($_POST['simpan'])) {
             'message' => 'Error: ' . mysqli_error($conn)
         ];
     }
-    header('Location: beranda.php');
+    header('Location: beranda_user.php');
     exit();
 }
 
@@ -38,7 +38,7 @@ if (isset($_POST['delete'])) {
             'message' => 'Gagal menghapus pesanan: ' . mysqli_error($conn)
         ];
     }
-    header('Location: beranda.php');
+    header('Location: beranda_user.php');
     exit();
 }
 
@@ -60,6 +60,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])){
             'message' => 'Gagal memperbarui pesanan.'
         ];
     }
-    header('Location: beranda.php');
+    header('Location: beranda_user.php');
     exit();
     }

@@ -15,14 +15,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $row["password"])) {
             $_SESSION["nama"] = $row["nama"];
             $_SESSION["penumpang_id"] = $row ["penumpang_id"];
-            $_SESSION["kontak"] = $row ["contact"];
+            $_SESSION["role"] = $row ["role"];
 
-            $_SESSION['notification'] = [
-                'type' => 'primary',
-                'message' => 'Selamat Datang Kembali!'   
-            ];
-            
-            header('Location: ../beranda.php');
+            if($row['role']=="admin"){
+                $_SESSION['nama'] = $nama;
+                $_SESSION['role'] = "admin";
+                header("Location: ../beranda.php");
+
+            }else if($row['role']=="user"){
+                $_SESSION['nama'] = $nama;
+                $_SESSION['role'] = "user";
+                header("Location: ../beranda_user.php");
+            }
+            //header('Location: ../beranda.php');
             exit();
         } else {
             $_SESSION['notification'] = [

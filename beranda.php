@@ -3,7 +3,8 @@ include (".includes/header.php");
 $title = "Beranda";
 include '.includes/toast_notification.php';
 ?>
-<div class="container-xxl flex-grow-1 container-p-y">
+
+    <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
@@ -13,8 +14,8 @@ include '.includes/toast_notification.php';
                 <div class="table-responsive text-nowrap">
                     <table id="datatable" class="table table-hover">
                         <thead>
-                            <tr class="text-center">
-                                <th width="50px">#</th>
+                        <tr class="text-center">
+                                <th width="50px"></th>
                                 <th>Nama</th>
                                 <th>Kota Asal</th>
                                 <th>Kota Tujuan</th>

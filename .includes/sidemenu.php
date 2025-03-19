@@ -17,6 +17,12 @@
         <div data-i18n="Analytics">Beranda</div>
       </a>
     </li>
+    <li class="menu-item">
+      <a href="beranda_user.php" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-home-circle"></i>
+        <div data-i18n="Analytics">Beranda User</div>
+      </a>
+    </li>
     <!-- Forms & Tables -->
     <li class="menu-header small text-uppercase"><span class="menu-header-text">Pesanan</span></li>
     <!-- Forms -->
