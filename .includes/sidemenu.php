@@ -24,26 +24,26 @@
       </a>
     </li>
     <!-- Forms & Tables -->
-    <li class="menu-header small text-uppercase"><span class="menu-header-text">Pesanan</span></li>
-    <!-- Forms -->
-    <li class="menu-item">
-      <a href="javascript:void(0);" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-detail"></i>
-        <div data-i18n="Pesanan">Pesanan</div>
-      </a>
-      <ul class="menu-sub">
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">Pesanan</span></li>
+        <!-- Forms -->
         <li class="menu-item">
-          <a href="pesanan.php" class="menu-link">
-            <div data-i18n="Basic Inputs">Buat Pesanan</div>
+          <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-detail"></i>
+            <div data-i18n="Pesanan">Pesanan</div>
           </a>
-        </li>
-        <li class="menu-item">
-          <a href="rute.php" class="menu-link">
-            <div data-i18n="Input groups">Rute</div>
-          </a>
+          <ul class="menu-sub">
+            <li class="menu-item">
+              <a href="pesanan.php" class="menu-link">
+                <div data-i18n="Basic Inputs">Buat Pesanan</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="rute.php" class="menu-link">
+                <div data-i18n="Input groups">Rute</div>
+              </a>
+            </li>
+          </ul>
         </li>
       </ul>
-    </li>
-  </ul>
-</aside>
+    </aside>
 <!-- / Menu -->
