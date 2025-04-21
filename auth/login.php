@@ -1,4 +1,4 @@
-<?php include(".layouts/header.php"); ?>
+<?php include(".layouts/header.php");?>
 <!-- Register -->
 <div class="card">
   <div class="card-body">
@@ -25,14 +25,6 @@
             placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
             aria-describedby="password" />
           <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-        </div>
-        <div class="form-check form-check-inline mt-3">
-          <input class="form-check-input" type="radio" name="role" id="inlineRadio2" value="admin" <?= (isset($_POST['role']) && $_POST['role'] == 'admin') ? 'checked' : '' ?>>
-            <label class="form-check-label" for="admin">Admin</label>
-        </div>
-        <div class="form-check form-check-inline mt-3">
-          <input class="form-check-input" type="radio" name="role" id="inlineRadio2" value="user" <?= (isset($_POST['role']) && $_POST['role'] == 'user') ? 'checked' : '' ?>>
-            <label class="form-check-label" for="user">User</label>
         </div>
       </div>
       <div class="mb-3">

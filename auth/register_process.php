@@ -6,11 +6,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nama = $_POST["nama"];
     $password = $_POST["password"];
     $kontak = $_POST["kontak"];
-    $role = $_POST["role"];
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO penumpang (nama, password, kontak, role)
-    VALUES ( '$nama', '$hashedPassword', '$kontak', '$role')";
+    $sql = "INSERT INTO penumpang (nama, password, kontak)
+    VALUES ( '$nama', '$hashedPassword', '$kontak')";
     if ($conn->query($sql) === TRUE) {
         $_SESSION['notification'] = [
             'type' => 'primary',
