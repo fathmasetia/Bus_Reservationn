@@ -88,6 +88,11 @@ if($_SESSION['role'] != "user"){
             </div>
         </div>
     </div>
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <a href="rute.php">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="">Lihat Rute</button>
+    </div>
+</form>
 </div>
 <?php
 }?>
@@ -220,10 +225,13 @@ if($_SESSION['role'] != "admin"){
             </div>
         </div>
     </div>
+</form>
+</div>
+<div class="container-xxl flex-grow-1 container-p-y">
+
     <a href="pesanan.php">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addPemesanan">Buat Pesanan</button>
-    </form>
-</div>
+    </div>
 <?php
 }?>
 

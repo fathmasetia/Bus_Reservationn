@@ -31,11 +31,6 @@
                 <div data-i18n="Basic Inputs">Buat Pesanan</div>
               </a>
             </li>
-            <li class="menu-item">
-              <a href="rute.php" class="menu-link">
-                <div data-i18n="Input groups">Rute</div>
-              </a>
-            </li>
           </ul>
         </li>
       </ul>
