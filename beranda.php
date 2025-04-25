@@ -29,7 +29,7 @@ if($_SESSION['role'] != "user"){
                         <tbody class="table-border-bottom-0">
                             <?php
                             $index = 1; 
-                            $query = "SELECT pemesanan.*, penumpang.nama, rute.kota_asal, rute.kota_tujuan, rute.harga FROM pemesanan INNER JOIN penumpang ON pemesanan.penumpang_id = penumpang.penumpang_id LEFT JOIN rute ON pemesanan.rute_id = rute.rute_id WHERE pemesanan.penumpang_id = $penumpangId";
+                            $query = "SELECT pemesanan.*, penumpang.nama, rute.kota_asal, rute.kota_tujuan, rute.harga FROM pemesanan INNER JOIN penumpang ON pemesanan.penumpang_id = penumpang.penumpang_id LEFT JOIN rute ON pemesanan.rute_id = rute.rute_id";
                             $exec = mysqli_query($conn, $query);
 
                             while ($pemesanan = mysqli_fetch_assoc($exec)):
