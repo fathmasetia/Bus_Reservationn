@@ -104,7 +104,7 @@ if($_SESSION['role'] != "admin"){
     <div class="card">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h4>Daftar Rute yang Tersedia</h4>
+                <h4>Daftar Rute yang Tersedia:</h4>
             </div>
             <div class="card-body">
                 <div class="table-responsive text-nowrap">
